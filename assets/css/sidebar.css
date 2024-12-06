@@ -58,4 +58,50 @@
 
 .sub-menu li:hover {
     color: #e08722;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.logo-header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+}
+
+.logo .nexus-logo {
+    width: 30px;
+    height: 30px;
+}
+
+.profile-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#imageSidebar {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+#usernameSidebar {
+    font-size: 14px;
+    color: white;
+    margin-top: 5px;
 } 
+.logo-header h1 {
+    font-size: 14px;
+    color: white;
+    font-weight: bold;
+    margin: 0;
+    white-space: nowrap;
+}

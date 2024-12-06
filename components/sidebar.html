@@ -1,6 +1,8 @@
 <div class="logo">
-  <img src="../assets/img/goku.png" alt="Profile" id="imageSidebar" />
-  <span id="usernameSidebar"></span>
+  <div class="logo-header">
+    <img src="../assets/img/logo-nexus.png"  alt="Nexus Logo" class="nexus-logo" /> 
+    <h1>Nexus Econovision</h1> 
+  </div>
 </div>
 
 <ul class="nav-links">
@@ -36,12 +38,12 @@
   </li>
   </li>
 
-  <li class="nav-item">
+  <!-- <li class="nav-item">
     <a href="../pages/ipo.html">
       <i class="fa-solid fa-building"></i>
         <span>IPO</span>
     </a>
-  </li>  
+  </li>   -->
 
   <li class="nav-item">
     <a href="../pages/subscription.html">
@@ -52,14 +54,14 @@
 
   <li class="nav-item">
     <a href="../pages/portfolio.html">
-      <i class="fas fa-user"></i>
-      <span>Portofolio</span>
+      <i class="fa-solid fa-receipt"></i>
+      <span>History</span>
     </a>
   </li>
 
   <li class="nav-item">
     <a href="/pages/inventory.html">
-      <i class="fas fa-clipboard-check"></i>
+      <i class="fa-solid fa-user"></i>
       <span>Inventory</span>
     </a>
   </li>
@@ -95,9 +97,8 @@
 <script src="../assets/js/menu-click.js"></script>
 
 <script>
-  imageSidebar.src = userData.image;
-  usernameSidebar.innerHTML = userData.username;
-
+  // imageSidebar.src = userData.image;
+  // usernameSidebar.innerHTML = userData.username;
   logoutBtn.addEventListener('click', () => {
     removeToken();
     window.location.href = '/pages/login.html';

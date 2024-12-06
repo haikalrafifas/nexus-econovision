@@ -1,4 +1,6 @@
 @import url("../css/style.css");
+@import url("../css/nav.css");
+
 .nav-link {
   text-decoration: none; /* Menghilangkan garis bawah */
   color: inherit; /* Menggunakan warna yang sama dengan teks lainnya */
