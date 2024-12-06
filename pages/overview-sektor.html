@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sektor</title>
+    <link rel="stylesheet" href="../assets/css/sektor.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="/assets/js/token.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Sidebar -->
+      <nav class="sidebar" id="sidebar"></nav>
+
+      <!-- Main Content -->
+      <main class="main-content">
+        <header id="topbar"></header>
+
+        <!-- Stats Cards -->
+        <div class="stats-container">
+          <div class="stat-card">
+            <div class="stat-header">
+              <h2>XXX</h2>
+              <i class="fas fa-users stats-icon"></i>
+            </div>
+            <h3>Persentase Sektor Naik</h3>
+            <div class="growth positive">
+              <div class="growth-value">
+                <i class="fas fa-arrow-up"></i>
+                10.2
+              </div>
+              <span class="growth-period">+1.01% this month</span>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-header">
+              <h2>XXX</h2>
+              <i class="fas fa-chart-line stats-icon red"></i>
+            </div>
+            <h3>Persentase Sektor Turun</h3>
+            <div class="growth positive">
+              <div class="growth-value">
+                <i class="fas fa-arrow-up"></i>
+                <span>3.1</span>
+              </div>
+              <span class="growth-period">+0.49% this month</span>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-header">
+              <h2>XXX</h2>
+              <i class="fas fa-check-circle stats-icon purple"></i>
+            </div>
+            <h3>Total Sektor</h3>
+            <div class="growth negative">
+              <div class="growth-value">
+                <i class="fas fa-arrow-down"></i>
+                <span>2.56</span>
+              </div>
+              <span class="growth-period">-0.91% this month</span>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-header">
+              <h2>XXXX</h2>
+              <i class="fas fa-exchange-alt stats-icon orange"></i>
+            </div>
+            <h3>Refunded</h3>
+            <div class="growth positive">
+              <div class="growth-value">
+                <i class="fas fa-arrow-up"></i>
+                <span>7.2</span>
+              </div>
+              <span class="growth-period">+1.51% this month</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Charts Section -->
+        <div class="charts-container">
+          <div class="orders-chart">
+            <div class="chart-header">
+              <h3>Grafik Sektor</h3>
+              <div style="display: flex; align-items: center">
+                <div class="chart-legend" style="margin: 0;">
+                  <div class="legend-item">
+                    <span class="legend-dot"></span>
+                    <span>Petanian</span>
+                  </div>
+                  <div class="legend-item">
+                    <span class="legend-dot"></span>
+                    <span>Peternakan</span>
+                  </div>
+                </div>
+
+                <div class="chart-controls">
+                  <div class="chart-value"></div>
+                  <select>
+                    <option>Monthly</option>
+                    <option>Weekly</option>
+                    <option>Daily</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="chart-content">
+              <canvas id="ordersChart"></canvas>
+            </div>
+          </div>
+
+          <div class="earnings-chart">
+            <div class="chart-header">
+              <h3>percentage</h3>
+              <button class="more-options"><i class="fas fa-ellipsis-h"></i></button>
+            </div>
+            <div class="donut-container">
+              <canvas id="earningsChart"></canvas>
+              <div class="center-value">30%</div>
+            </div>
+            <div class="chart-legend"></div>
+          </div>
+        </div>
+
+        <!-- Orders Table -->
+
+        <!-- Stock List -->
+        <div class="stock-list">
+          <div class="stock-list-header">
+            <h3>Sektor List</h3>
+            <!-- Search Box-->
+            <div class="search-container">
+              <i class="fas fa-search search-icon"></i>
+              <input type="text" class="search-input" placeholder="Search">
+            </div>
+  
+            <select class="period-select">
+              <option>Select Region</option>
+            </select>
+
+            <select class="period-select">
+              <option>Monthly</option>
+              <option>Weekly</option>
+              <option>Daily</option>
+            </select>
+          </div>
+
+          <div class="stock-table">
+            <table>
+              <thead>
+                <tr>
+                  <th>No</th>
+                  <th>Sektor Name <i class="fas fa-sort"></i></th>
+                  <th>Percentage <i class="fas fa-sort"></i></th>
+                  <th>Jumlah Usaha <i class="fas fa-sort"></i></th>
+                  <th>GDP Growth Rate <i class="fas fa-sort"></i></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>
+                    <div class="stock-info">
+                      <img src="../assets/img/goku.png" alt="sektor" />
+                      <span>Sektor Pertanian</span>
+                    </div>
+                  </td>
+                  <td>70%</td>
+                  <td>1589</td>
+                  <td>4,35%</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>
+                    <div class="stock-info">
+                      <img src="../assets/img/goku.png" alt="sektor" />
+                      <span>Sektor Peternakan</span>
+                    </div>
+                  </td>
+                  <td>60%</td>
+                  <td>1236</td>
+                  <td>3,45%</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>
+                    <div class="stock-info">
+                      <img src="../assets/img/goku.png" alt="sektor" />
+                      <span>Sektor Pertambangan</span>
+                    </div>
+                  </td>
+                  <td>50%</td>
+                  <td>75</td>
+                  <td>2,52%</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>
+                    <div class="stock-info">
+                      <img src="../assets/img/goku.png" alt="sektor" />
+                      <span>Sektor Perikanan</span>
+                    </div>
+                  </td>
+                  <td>40%</td>
+                  <td>489</td>
+                  <td>1,67%</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        </div>
+    </main>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../assets/js/Chart.js"></script>
+    
+    <!-- AJAX App Script -->
+    <script>
+      $(document).ready(() => {
+        $('#topbar').load('../components/topbar.html');
+        $('#sidebar').load('../components/sidebar.html');
+      });
+    </script>
+  </body>
+</html>

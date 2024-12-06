@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="../assets/css/login.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="forms-container">
+      <div class="signin-signup">
+        <!-- Login Form -->
+        <div class="form-section sign-in">
+          <div class="header">
+            <h1>PROFIT</h1>
+            <p>Predictive Research for Optimizing Future Investment Trends</p>
+          </div>
+          <div class="login-container">
+            <h2>Login</h2>
+            <form id="loginForm">
+              <label for="email">Email</label>
+              <input type="email" id="emailInput" placeholder="Example@email.com" required autofocus>
+              <label for="password">Password</label>
+              <input type="password" id="passwordInput" placeholder="At least 8 characters" required>
+              <div class="forgot-password">
+                <a href="#">Forgot Password?</a>
+              </div>
+              <button class="sign-in-btn" type="submit">Sign in</button>
+            </form>
+            <div class="or">Or</div>
+            <div class="social-login">
+              <button class="google"><i class="fab fa-google"></i> Sign in with Google</button>
+              <button class="facebook"><i class="fab fa-facebook-f"></i> Sign in with Facebook</button>
+            </div>
+            <div class="signup">
+              Don't you have an account? <a href="#" class="toggle-form">Sign up</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sign Up Form -->
+        <div class="form-section sign-up">
+          <div class="header">
+            <h1>PROFIT</h1>
+            <p>Predictive Research for Optimizing Future Investment Trends</p>
+          </div>
+          <div class="login-container">
+            <h2>Sign Up</h2>
+            <label for="signup-username">Username</label>
+            <input type="text" id="signup-username" placeholder="Enter your username">
+            <label for="signup-email">Email</label>
+            <input type="email" id="signup-email" placeholder="Example@email.com">
+            <label for="signup-password">Password</label>
+            <input type="password" id="signup-password" placeholder="At least 8 characters">
+            <button class="sign-up-btn">Sign up</button>
+            <div class="or">Or</div>
+            <div class="social-login">
+              <button class="google"><i class="fab fa-google"></i> Sign up with Google</button>
+              <button class="facebook"><i class="fab fa-facebook-f"></i> Sign up with Facebook</button>
+            </div>
+            <div class="signin">
+              Already have an account? <a href="#" class="toggle-form">Sign in</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="right-section">
+      <img src="../assets/img/investasi.png" alt="Descriptive Image" />
+    </div>
+  </div>
+
+  <script src="../assets/js/login.js"></script>
+
+  <!-- Actions -->
+  <script>
+    loginForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+
+      const email = emailInput.value;
+      const password = passwordInput.value;
+
+      const payload = { email, password };
+
+      fetch('https://ljrfhqrvxzwohdw7ligfcbp7um0vitrn.lambda-url.us-east-1.on.aws/api/v1/auth/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (data.statusCode === 200) {
+          localStorage.setItem('token', data.data.token);
+          window.location.href = '../';
+        } else {
+          alert('Login failed: ' + data.message);
+        }
+      })
+      .catch(error => {
+        console.error('Error during login:', error);
+        alert('An error occurred during login, please try again later.');
+      });
+    });
+  </script>
+</body>
+
+</html>

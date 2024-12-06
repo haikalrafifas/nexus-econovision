@@ -1,0 +1,226 @@
+@import url('../css/style.css');
+@import url('../css/nav.css');
+
+/* Main Container Styles */
+.inventory-container {
+    padding: 24px;
+}
+
+.inventory-container h1 {
+    font-size: 24px;
+    margin-bottom: 24px;
+    color: #1a1a1a;
+}
+
+/* Stats Row Styles */
+.stats-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+.stat-box {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.stat-title {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+.stat-title.total-stock {
+    color: #ff8040;
+}
+
+.stat-title.top-selling {
+    color: #4CAF50;
+    
+}
+
+.stat-title.low-stocks {
+    color: #F44336;
+}
+
+.stat-main {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.stat-number {
+    font-size: 24px;
+    font-weight: bold;
+    color: #1a1a1a;
+}
+
+.stat-amount {
+    font-size: 20px;
+    color: #1a1a1a;
+}
+
+.stat-footer {
+    display: flex;
+    justify-content: space-between;
+    color: #666;
+    font-size: 12px;
+}
+
+.stat-metrics {
+    display: flex;
+    justify-content: space-between;
+}
+
+.metric {
+    text-align: center;
+}
+
+.metric-number {
+    font-size: 24px;
+    font-weight: bold;
+    color: #1a1a1a;
+}
+
+.metric-label {
+    font-size: 12px;
+    color: #666;
+    margin-top: 11px; 
+    display: block;  
+}
+
+/* Controls Container */
+.controls-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 24px;
+}
+
+.search-wrapper {
+    position: relative;
+    flex: 1;
+    max-width: 400px;
+}
+
+.search-wrapper input {
+    width: 100%;
+    padding: 10px 40px;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+}
+
+.search-wrapper i {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+}
+
+.right-controls {
+    display: flex;
+    gap: 16px;
+}
+
+.date-picker, .status-dropdown select {
+    padding: 8px 16px;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    background: white;
+}
+
+/* Table Styles */
+.inventory-table {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 16px;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+th {
+    background: #f8f9fa;
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+/* Status Badge Styles */
+.status-badge {
+    padding: 6px 12px;
+    border-radius: 16px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.hold {
+    background: #4CAF50;
+    color: white;
+}
+
+.monitor {
+    background: #AED581;
+    color: #1a1a1a;
+}
+
+.stable {
+    background: #4CAF50;
+    color: white;
+}
+
+.growth {
+    background: #4CAF50;
+    color: white;
+}
+
+.dividends {
+    background: #4CAF50;
+    color: white;
+}
+
+/* Checkbox Styles */
+input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    border-radius: 4px;
+    border: 1px solid #e0e0e0;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .stats-row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .stats-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .controls-container {
+        flex-direction: column;
+        gap: 16px;
+    }
+    
+    .search-wrapper {
+        max-width: 100%;
+    }
+}
+
+.metric-label.not-in-stock {
+    position: absolute;
+    top: 30%;
+    right: 60px;
+}

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/inventory.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <title>Inventory</title>
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <nav class="sidebar" id="sidebar"></nav>
+    
+        <!-- Main Content -->
+        <main class="main-content">
+          <header id="topbar"></header>
+
+        
+            <!-- Stock Inventory Section -->
+            <div class="inventory-container">
+                <h1>Stock Inventory</h1>
+                    
+                    <!-- Stats Cards -->
+                    <div class="stats-row">
+                        <div class="stat-box">
+                            <div class="stat-title total-stock">Total Stock</div>
+                            <div class="stat-main">
+                                <div class="stat-number">XXX</div>
+                                <div class="stat-amount">XXX</div>
+                            </div>
+                            <div class="stat-footer">
+                                <span>Last 7 days</span>
+                                <span>Revenue</span>
+                            </div>
+                        </div>
+            
+                        <div class="stat-box">
+                            <div class="stat-title top-selling">Top Selling</div>
+                            <div class="stat-main">
+                                <div class="stat-number">XXX</div>
+                                <div class="stat-amount">XXX</div>
+                            </div>
+                            <div class="stat-footer">
+                                <span>Last 7 days</span>
+                                <span>Cost</span>
+                            </div>
+                        </div>
+            
+                        <div class="stat-box">
+                            <div class="stat-title low-stocks">Low Stocks</div>
+                            <div class="stat-metrics">
+                                <div class="metric">
+                                    <div class="metric-number">XXX</div>
+                                    <div class="metric-label">Ordered</div>
+                                </div>
+                                <div class="metric">
+                                    <div class="metric-number">XXX</div>
+                                    <div class="metric-label not-in-stock">Not in stock</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <!-- Search and Controls -->
+                    <div class="controls-container">
+                        <div class="search-wrapper">
+                            <i class="fas fa-search"></i>
+                            <input type="text" placeholder="Quick search">
+                        </div>
+                        <div class="right-controls">
+                            <input type="date" class="date-picker" id="datePicker">
+                            <div class="status-dropdown">
+                                <select>
+                                    <option>Status</option>
+                                    <option>Hold</option>
+                                    <option>Monitor</option>
+                                    <option>Stable</option>
+                                    <option>Growth</option>
+                                    <option>Dividends</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <!-- Table -->
+                    <div class="inventory-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th><input type="checkbox"></th>
+                                    <th>Stock ID</th>
+                                    <th>Stock Name</th>
+                                    <th>Purchase Date</th>
+                                    <th>Quantity</th>
+                                    <th>Total Purchase Price (IDR)</th>
+                                    <th>Current Value (IDR)</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Example row structure -->
+                                <tr>
+                                    <td><input type="checkbox"></td>
+                                    <td>001</td>
+                                    <td>PT Bank Central Asia Tbk (BBCA)</td>
+                                    <td>2024-09-20</td>
+                                    <td>50</td>
+                                    <td>450,000</td>
+                                    <td>504,000</td>
+                                    <td><span class="status-badge hold">Hold</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+        </main>
+    
+        
+    <script src="../assets/js/menu-click.js"></script>
+    <script>
+        $(document).ready(() => {
+          $('#topbar').load('../components/topbar.html');
+          $('#sidebar').load('../components/sidebar.html');
+        });
+    </script>
+</body>
+</html>

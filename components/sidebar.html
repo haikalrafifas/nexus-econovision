@@ -1,0 +1,105 @@
+<div class="logo">
+  <img src="../assets/img/goku.png" alt="Profile" id="imageSidebar" />
+  <span id="usernameSidebar"></span>
+</div>
+
+<ul class="nav-links">
+  <!-- Menu Home -->
+  <li class="menu-item">
+    <div class="menu-title">
+      <div class="menu-left">
+        <i class="fas fa-home"></i>
+        <span>Home</span>
+      </div>
+      <i class="fas fa-chevron-down arrow-icon"></i>
+    </div>
+    <ul class="sub-menu">
+      <li><a href="../pages/overview-sektor.html">Overview Sektor</a></li>
+      <li><a href="../index.html">Overview Stock</a></li>
+    </ul>
+  </li>
+
+  <!-- Menu Overview -->
+  <li class="menu-item">
+    <div class="menu-title">
+      <div class="menu-left">
+        <i class="fas fa-arrow-trend-up"></i>
+        <span>Profit</span>
+      </div>
+      <i class="fas fa-chevron-down arrow-icon"></i>
+    </div>
+    <ul class="sub-menu">
+      <li><a href="../pages/news.html">News</a></li>
+      <li><a href="../pages/research.html">Research</a></li>
+      <li><a href="../pages/chat-bot.html">Chatbot</a></li>
+    </ul>
+  </li>
+  </li>
+
+  <li class="nav-item">
+    <a href="../pages/ipo.html">
+      <i class="fa-solid fa-building"></i>
+        <span>IPO</span>
+    </a>
+  </li>  
+
+  <li class="nav-item">
+    <a href="../pages/subscription.html">
+      <i class="fas fa-money-check"></i>
+      <span>Subscription</span>
+    </a>
+  </li>
+
+  <li class="nav-item">
+    <a href="../pages/portfolio.html">
+      <i class="fas fa-user"></i>
+      <span>Portofolio</span>
+    </a>
+  </li>
+
+  <li class="nav-item">
+    <a href="/pages/inventory.html">
+      <i class="fas fa-clipboard-check"></i>
+      <span>Inventory</span>
+    </a>
+  </li>
+
+  <li class="nav-item">
+    <a href="../pages/setting.html">
+      <i class="fas fa-cog"></i>
+      <span>Setting</span>
+    </a>
+  </li>
+</ul>
+
+
+<!-- Pindahkan bottom-links ke sini, setelah nav-links -->
+<ul class="nav-links bottom-section">
+  <li class="nav-item">
+    <a href="../pages/helpcentre.html" class="nav-link">
+      <i class="fas fa-question-circle"></i>
+      <span>Help Centre</span>
+    </a>
+  </li>
+  <li class="nav-item">
+    <a href="../pages/contact-us.html" class="nav-link">
+      <i class="fas fa-envelope"></i>
+      <span>Contact us</span>
+    </a>
+  <li class="nav-item logout" id="logoutBtn">
+    <i class="fas fa-sign-out-alt"></i>
+    <span>Log out</span>
+  </li>
+</ul>
+
+<script src="../assets/js/menu-click.js"></script>
+
+<script>
+  imageSidebar.src = userData.image;
+  usernameSidebar.innerHTML = userData.username;
+
+  logoutBtn.addEventListener('click', () => {
+    removeToken();
+    window.location.href = '/pages/login.html';
+  });
+</script>

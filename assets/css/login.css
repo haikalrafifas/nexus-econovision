@@ -1,0 +1,367 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    background-color: #f5f5f5;
+}
+
+.left-section {
+    width: 40%;
+    min-width: 400px;
+    background-color: #ffffff;
+    position: relative;
+    overflow: hidden;
+}
+
+.right-section {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+}
+
+.right-section img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Header styling */
+.header {
+    background-color: #1a237e;
+    color: white;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 24px;
+    color: #FE981E;
+}
+
+.header p {
+    margin: 5px 0 0;
+    font-size: 14px;
+}
+
+.login-container {
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.login-container h2 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Input Fields Styling */
+.login-container label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #333;
+    font-size: 14px;
+}
+
+
+.login-container input[type="email"],
+.login-container input[type="password"],
+.login-container input[type="text"] {  /* Menambahkan input type text untuk username */
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 24px;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #333;
+    transition: border-color 0.3s ease;
+}
+
+.login-container input::placeholder {
+    color: #999;
+    font-size: 14px;
+}
+
+.login-container input:focus {
+    outline: none;
+    border-color: #1a237e;
+    box-shadow: 0 0 0 2px rgba(26, 35, 126, 0.1);
+}
+
+/* Mengganti styling button sign-in yang lama */
+.login-container button.sign-in {
+    /* Hapus style lama ini */
+    width: 100%;
+    padding: 10px;
+    background-color: #1a237e;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-top: 10px;
+    position: relative;
+    cursor: pointer;
+}
+
+.login-container button.sign-in:hover {
+    background-color: #0d1b6a;
+}
+
+/* Forgot Password Link */
+.forgot-password {
+    text-align: right;
+    margin: -16px 0 24px 0;
+}
+
+.forgot-password a {
+    color: #1a237e;
+    font-size: 14px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.forgot-password a:hover {
+    color: #0d1b6a;
+}
+
+.login-container .or {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 14px;
+    color: #888;
+}
+
+.login-container .social-login button {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.login-container .social-login button.google {
+    background-color: white;
+    color: #444;
+}
+
+.login-container .social-login button.facebook {
+    background-color: #3b5998;
+    color: white;
+}
+
+.login-container .signup {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+
+
+
+
+//SIGN UP
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.forms-container {
+    position: absolute;
+    width: 40%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.signin-signup {
+    position: absolute;
+    width: 200%;
+    height: 100%;
+    display: flex;
+    transition: transform 0.7s ease-in-out;
+}
+
+/* Styling untuk link sign in/up */
+.signin, .signup {
+    text-align: center;
+    font-size: 14px;
+    color: #666;
+    margin-top: 16px; /* Sesuaikan jarak dari button Facebook */
+    padding-bottom: 20px; /* Tambahkan padding bottom */
+}
+
+.signin a, .signup a {
+    color: #1a237e;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.signin a:hover, .signup a:hover {
+    color: #0d1b6a;
+}
+
+
+.form-section {
+    width: 50%;
+    background: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.right-section {
+    position: absolute;
+    width: 60%;
+    height: 100%;
+    left: 40%;
+    overflow: hidden;
+}
+
+/* Animation Classes */
+.container.sign-up-mode .signin-signup {
+    transform: translateX(-50%);
+}
+
+/* Transition effects */
+.form-section {
+    transition: all 0.7s ease-in-out;
+}
+
+.form-section.sign-in {
+    opacity: 1;
+    z-index: 2;
+}
+
+.form-section.sign-up {
+    opacity: 0;
+    z-index: 1;
+}
+
+.container.sign-up-mode .form-section.sign-in {
+    opacity: 0;
+    z-index: 1;
+}
+
+.container.sign-up-mode .form-section.sign-up {
+    opacity: 1;
+    z-index: 2;
+}
+
+
+
+/* BAGIAN YANG DITAMBAH BARU */
+/* Styling baru untuk kedua button */
+.sign-in-btn, .sign-up-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #1a237e;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 20px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.sign-in-btn:hover, .sign-up-btn:hover {
+    background-color: #0d1b6a;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(26, 35, 126, 0.2);
+}
+
+.sign-in-btn:active, .sign-up-btn:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+/* Styling baru untuk divider Or */
+.or {
+    text-align: center;
+    margin: 20px 0;
+    position: relative;
+    color: #666;
+}
+
+.or::before,
+.or::after {
+    content: "";
+    position: absolute;
+    width: 45%;
+    height: 1px;
+    background-color: #e0e0e0;
+    top: 50%;
+}
+
+.or::before {
+    left: 0;
+}
+
+.or::after {
+    right: 0;
+}
+
+
+/* Styling baru untuk social login buttons */
+/* Styling untuk container social login dan sign in link */
+.social-login {
+    margin-top: 20px;
+    margin-bottom: 20px; /* Tambahkan margin bottom */
+}
+
+
+/* Update styling social login buttons */
+.social-login button {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 12px;
+    transition: all 0.3s ease;
+}
+
+.social-login button:last-child {
+    margin-bottom: 0; /* Hapus margin bottom dari button terakhir */
+}
+
+.social-login button.google {
+    background-color: white;
+    color: #444;
+}
+
+.social-login button.google:hover {
+    background-color: #f5f5f5;
+    border-color: #dadce0;
+}
+
+.social-login button.facebook {
+    background-color: #1877f2;
+    color: white;
+    border: none;
+}
+
+.social-login button.facebook:hover {
+    background-color: #166fe5;
+}

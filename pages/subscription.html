@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../assets/css/subscription.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script src="/assets/js/token.js"></script>
+  <title>Subscription</title>
+</head>
+
+<body>
+  <div class="container">
+    <!-- Sidebar -->
+    <nav class="sidebar" id="sidebar"></nav>
+
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <header id="topbar"></header>
+
+      <div class="subscription-container">
+        <h1 class="title">The Right Plan for Your Business</h1>
+        <p class="subtitle">We have several powerful plans to showcase your business and get discovered as a creative
+          entrepreneurs. Everything you need.</p>
+
+        <div class="billing-toggle">
+          <span class="bill-monthly active">Bill Monthly</span>
+          <label class="switch">
+            <input type="checkbox">
+            <span class="slider round"></span>
+          </label>
+          <span class="bill-annually">Bill Annualy</span>
+        </div>
+
+        <div class="pricing-cards">
+          <!-- VIP Card -->
+          <div class="pricing-card">
+            <h2>VIP</h2>
+            <ul class="features">
+              <li><i class="fas fa-check"></i> Live streaming</li>
+              <li><i class="fas fa-check"></i> News</li>
+              <li><i class="fas fa-check"></i> Riset</li>
+            </ul>
+            <div class="price-button-wrapper">
+              <div class="price">
+                <span class="amount">Rp. 100.000</span>
+                <span class="period">/month</span>
+              </div>
+              <button class="choose-btn">Choose</button>
+            </div>
+          </div>
+
+          <!-- VVIP Card -->
+          <div class="pricing-card featured">
+            <h2>VVIP</h2>
+            <div class="save-badge">BEST CHOICE</div>
+            <ul class="features">
+              <li><i class="fas fa-check"></i> Live Streaming</li>
+              <li><i class="fas fa-check"></i> News</li>
+              <li><i class="fas fa-check"></i> Riset</li>
+              <li><i class="fas fa-check"></i> Chat bot</li>
+            </ul>
+            <div class="price-button-wrapper">
+              <div class="price">
+                <span class="amount">Rp. 200.000</span>
+                <span class="period">/month</span>
+              </div>
+              <button class="subscription-btn">Subscription</button>
+            </div>
+          </div>
+
+          <!-- Nexus Card -->
+          <div class="pricing-card">
+            <h2>Nexus</h2>
+            <ul class="features">
+              <li><i class="fas fa-check"></i> Live streaming</li>
+              <li><i class="fas fa-check"></i> News</li>
+              <li><i class="fas fa-check"></i> Riset</li>
+              <li><i class="fas fa-check"></i> Chat bot</li>
+              <li><i class="fas fa-check"></i> IPO</li>
+            </ul>
+            <div class="price">
+              <span class="amount">Rp. 299.000</span>
+              <span class="period">/month</span>
+            </div>
+            <button class="choose-btn">Choose</button>
+          </div>
+        </div>
+      </div>
+      <!-- Tambahkan di akhir sebelum closing tag body -->
+      <div id="orderPopup" class="popup-overlay">
+        <div class="popup-content">
+          <h2>Order Summary</h2>
+          <div class="order-details">
+            <div class="plan-info">
+              <span id="planName"></span>
+              <span id="planPrice"></span>
+            </div>
+            <div class="plan-features">
+              <div id="features-list"></div>
+            </div>
+            <div class="price-summary">
+              <div class="subtotal">
+                <span>Subtotal</span>
+                <span id="subtotalAmount"></span>
+              </div>
+              <div class="total">
+                <span>Total</span>
+                <span id="totalAmount"></span>
+              </div>
+            </div>
+          </div>
+          <button class="confirm-btn">Confirm</button>
+        </div>
+      </div>
+    </main>
+    <script src="../assets/js/subscription.js"></script>
+    <!-- AJAX App Script -->
+    <script>
+      $(document).ready(() => {
+        $('#topbar').load('../components/topbar.html');
+        $('#sidebar').load('../components/sidebar.html');
+      });
+    </script>
+</body>
+
+</html>

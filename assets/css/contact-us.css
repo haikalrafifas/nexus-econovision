@@ -1,0 +1,182 @@
+@import url('../css/style.css');
+
+.main-content {
+    padding: 30px;
+    background: white;
+}
+
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 100px;
+    padding: 20px 200px;
+    max-width: 1400px;
+    margin: 0 auto;
+    margin-top: 100px;
+}
+
+.contact-form {
+    flex: 1;
+    max-width: 600px;
+}
+
+.contact-form h1 {
+    color: #051040;
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.subtitle {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 0;
+    border: none;
+    border-bottom: 1px solid #e0e0e0;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    background: transparent;
+}
+
+.form-group textarea {
+    height: 100px;
+    resize: none;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-bottom: 2px solid #051040;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #999;
+}
+
+.send-button {
+    background: #7c3aed;
+    color: white;
+    border: none;
+    padding: 12px 0;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.send-button:hover {
+    background: #6d28d9;
+}
+
+.contact-info {
+    flex: 0.4;
+    margin-right: 50px;
+}
+
+.info-box {
+    background: #051040;
+    padding: 30px;
+    border-radius: 12px;
+    color: white;
+}
+
+.info-box h2 {
+    font-size: 22px;
+    margin-bottom: 30px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.info-item i {
+    font-size: 18px;
+    width: 20px;
+    color: #fff;
+}
+
+.info-item span {
+    font-size: 13px;
+    color: #fff;
+    opacity: 0.9;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .contact-container {
+        padding: 20px 100px;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-container {
+        padding: 20px;
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .contact-form,
+    .contact-info {
+        width: 100%;
+        margin-right: 0;
+    }
+}
+
+.nav-link {
+    text-decoration: none;  /* Menghilangkan garis bawah */
+    color: inherit;         /* Menggunakan warna yang sama dengan teks lainnya */
+    display: flex;          /* Mempertahankan layout flex */
+    align-items: center;    /* Mempertahankan alignment */
+    gap: 12px;             /* Jarak antara icon dan teks */
+    width: 100%;           /* Memastikan link mengambil lebar penuh */
+}
+
+/* Update styling untuk nav-item jika diperlukan */
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+//nav item
+.nav-item span {
+    color: #8B8B8B;
+    text-decoration: none;
+}
+
+.nav-item i {
+    color: #8B8B8B;
+    width: 20px; /* Lebar tetap untuk icon */
+}
+
+.nav-item a {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+}

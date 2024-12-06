@@ -1,0 +1,143 @@
+@import url('../css/style.css');
+@import url('../css/nav.css');
+
+.help-container {
+    padding: 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.help-container h1 {
+    font-size: 32px;
+    color: #1a237e;
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+/* Search Box */
+.search-box {
+    position: relative;
+    margin-bottom: 32px;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 16px;
+    padding-right: 48px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.search-box i {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+}
+
+/* Categories */
+.help-categories {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 32px;
+    justify-content: center;
+}
+
+.category-btn {
+    padding: 8px 16px;
+    border: none;
+    background: #f5f5f5;
+    border-radius: 20px;
+    cursor: pointer;
+    color: #666;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.category-btn.active {
+    background: #1a237e;
+    color: white;
+}
+
+/* Help Sections */
+.help-section {
+    margin-bottom: 40px;
+}
+
+.help-section h2 {
+    font-size: 24px;
+    color: #1a237e;
+    margin-bottom: 16px;
+}
+
+.faq-item {
+    display: flex;
+    align-items: center;
+    padding: 16px;
+    background: white;
+    border-radius: 12px;
+    margin-bottom: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+    transform: translateX(5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.faq-icon {
+    width: 40px;
+    height: 40px;
+    background: #f5f5f5;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 16px;
+}
+
+.faq-icon i {
+    color: #1a237e;
+}
+
+.faq-content {
+    flex: 1;
+}
+
+.faq-content h3 {
+    font-size: 16px;
+    color: #1a237e;
+    margin-bottom: 4px;
+}
+
+.faq-content p {
+    color: #666;
+    font-size: 14px;
+    margin: 0;
+}
+
+.faq-item i.fa-chevron-right {
+    color: #666;
+    margin-left: 16px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .help-categories {
+        flex-wrap: wrap;
+    }
+    
+    .category-btn {
+        flex: 1;
+        min-width: 120px;
+        text-align: center;
+    }
+    
+    .faq-item {
+        padding: 12px;
+    }
+}

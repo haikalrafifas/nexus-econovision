@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stock</title>
+    <noscript><h2>JavaScript is required for this page.</h2></noscript>
+    <link rel="stylesheet" href="assets/css/index.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="assets/js/token.js"> </script>
+    <!-- <style>
+      iframe {
+        width: 100%;
+        height: 100vh;
+        border: none;
+      }
+    </style> -->
+  </head>
+  <body>
+    <div class="container">
+      <!-- Sidebar -->
+      <nav class="sidebar" id="sidebar"></nav>
+
+      <!-- Main Content -->
+      <main class="main-content">
+        <header id="topbar"></header>
+
+        <!-- Stats Cards -->
+        <div class="stats-container">
+          <div class="stat-card">
+            <div class="stat-header">
+              <h2>XXX</h2>
+              <i class="fas fa-users stats-icon"></i>
+            </div>
+            <h3>Persentase Stock Naik</h3>
+            <div class="growth positive">
+              <div class="growth-value">
+                <i class="fas fa-arrow-up"></i>
+                10.2
+              </div>
+              <span class="growth-period">+1.01% this month</span>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-header">
+              <h2>XXX</h2>
+              <i class="fas fa-chart-line stats-icon red"></i>
+            </div>
+            <h3>Persentase Stock Turun</h3>
+            <div class="growth positive">
+              <div class="growth-value">
+                <i class="fas fa-arrow-up"></i>
+                <span>3.1</span>
+              </div>
+              <span class="growth-period">+0.49% this month</span>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-header">
+              <h2>XXX</h2>
+              <i class="fas fa-check-circle stats-icon purple"></i>
+            </div>
+            <h3>Total Stock</h3>
+            <div class="growth negative">
+              <div class="growth-value">
+                <i class="fas fa-arrow-down"></i>
+                <span>2.56</span>
+              </div>
+              <span class="growth-period">-0.91% this month</span>
+            </div>
+          </div>
+
+          <!-- <div class="stat-card">
+            <div class="stat-header">
+              <h2>XXXX</h2>
+              <i class="fas fa-exchange-alt stats-icon orange"></i>
+            </div>
+            <h3>Refunded</h3>
+            <div class="growth positive">
+              <div class="growth-value">
+                <i class="fas fa-arrow-up"></i>
+                <span>7.2</span>
+              </div>
+              <span class="growth-period">+1.51% this month</span>
+            </div>
+          </div> -->
+        </div>
+
+        <!-- <iframe id="quickSightDashboard"></iframe> -->
+        <div id="embedDashboard"></div>
+
+        <!-- Charts Section -->
+        <!-- <div class="charts-container">
+          <div class="orders-chart">
+            <div class="chart-header">
+              <h3>Stock Market</h3>
+              <div style="display: flex; align-items: center">
+                <div class="chart-legend" style="margin: 0;">
+                  <div class="legend-item">
+                    <span class="legend-dot"></span>
+                    <span>Petanian</span>
+                  </div>
+                  <div class="legend-item">
+                    <span class="legend-dot"></span>
+                    <span>Peternakan</span>
+                  </div>
+                </div>
+
+                <div class="chart-controls">
+                  <div class="chart-value"></div>
+                  <select>
+                    <option>Monthly</option>
+                    <option>Weekly</option>
+                    <option>Daily</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="chart-content">
+              <canvas id="ordersChart"></canvas>
+            </div>
+          </div>
+
+          <div class="earnings-chart">
+            <div class="chart-header">
+              <h3>percentage</h3>
+              <button class="more-options"><i class="fas fa-ellipsis-h"></i></button>
+            </div>
+            <div class="donut-container">
+              <canvas id="earningsChart"></canvas>
+              <div class="center-value">30%</div>
+            </div>
+            <div class="chart-legend"></div>
+          </div>
+        </div> -->
+
+        <!-- Orders Table -->
+
+        <!-- Stock List -->
+        <div class="stock-list">
+          <div class="stock-list-header">
+            <h3>Stock List</h3>
+            <!-- Search Box-->
+            <div class="search-container">
+              <i class="fas fa-search search-icon"></i>
+              <input type="text" class="search-input" placeholder="Search">
+            </div>
+  
+            <select class="period-select" id="periodSelect" onchange="spawnDashboard({ period: this.value })">
+              <option value="YYYY">Yearly</option>
+              <option value="Q">Quarterly</option>
+              <option value="MM" selected>Monthly</option>
+              <option value="WK">Weekly</option>
+              <option value="DD">Daily</option>
+            </select>
+          </div>
+
+          <div class="stock-table">
+            <table>
+              <thead>
+                <tr>
+                  <th>No</th>
+                  <th>Stock Name <i class="fas fa-sort"></i></th>
+                  <th>Harga <i class="fas fa-sort"></i></th>
+                  <th>Percentage <i class="fas fa-sort"></i></th>
+                  <th>Purchase</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>
+                    <div class="stock-info">
+                      <img src="../assets/img/goku.png" alt="stock" />
+                      <span>xxxx</span>
+                    </div>
+                  </td>
+                  <td>1000</td>
+                  <td class="percentage positive">0.10% <i class="fas fa-arrow-up"></i></td>
+                  <td>
+                    <div class="action-buttons">
+                      <button class="btn btn-buy">Buy</button>
+                      <button class="btn btn-sell">Sell</button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>
+                    <div class="stock-info">
+                      <img src="../assets/img/goku.png" alt="stock" />
+                      <span>xxxx</span>
+                    </div>
+                  </td>
+                  <td>1000</td>
+                  <td class="percentage positive">0.10% <i class="fas fa-arrow-up"></i></td>
+                  <td>
+                    <div class="action-buttons">
+                      <button class="btn btn-buy">Buy</button>
+                      <button class="btn btn-sell">Sell</button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>
+                    <div class="stock-info">
+                      <img src="../assets/img/goku.png" alt="stock" />
+                      <span>xxxx</span>
+                    </div>
+                  </td>
+                  <td>1000</td>
+                  <td class="percentage positive">0.10% <i class="fas fa-arrow-up"></i></td>
+                  <td>
+                    <div class="action-buttons">
+                      <button class="btn btn-buy">Buy</button>
+                      <button class="btn btn-sell">Sell</button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>
+                    <div class="stock-info">
+                      <img src="../assets/img/goku.png" alt="stock" />
+                      <span>xxxx</span>
+                    </div>
+                  </td>
+                  <td>1000</td>
+                  <td class="percentage negative">0.10% <i class="fas fa-arrow-down"></i></td>
+                  <td>
+                    <div class="action-buttons">
+                      <button class="btn btn-buy">Buy</button>
+                      <button class="btn btn-sell">Sell</button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+       <!-- Popup Buy -->
+      <div class="popup-overlay" id="buyPopup">
+        <div class="popup-content">
+            <!-- Title -->
+            <h2 class="popup-title">Buy NFLX</h2>
+            
+            <!-- Stock Info Header -->
+            <div class="popup-header">
+                <div class="stock-info">
+                    <img src="https://images.ctfassets.net/4cd45et68cgf/Rx83JoRDMkYNlMC9MKzcB/2b14d5a59fc3937afd3f03191e19502d/Netflix-Symbol.png?w=700&h=456" alt="NFLX" class="stock-icon">
+                    <div class="stock-details">
+                        <span>NFLX</span>
+                        <span>Netflix, Inc</span>
+                    </div>
+                </div>
+                <div class="price-info">
+                    <div class="stock-price">361.42</div>
+                    <div class="price-change">+5(0.48%)</div>
+                    </div>
+                </div>
+      
+          <div class="popup-body">
+            <div class="trading-balance">
+              <label>Trading Balance</label>
+              <span class="balance-amount">Rp. 36.666.500</span>
+              <div class="slider-container">
+                  <input type="range" class="balance-slider">
+                  <span class="percentage-text">50%</span>
+              </div>
+          </div>
+      
+            <div class="investment-section">
+              <label>Investment</label>
+              <span class="investment-amount">Rp. 36.666.500</span>
+            </div>
+      
+            <div class="price-section">
+              <label>Price</label>
+              <div class="price-input">
+                <button class="decrease">-</button>
+                <input type="number" value="0">
+                <button class="increase">+</button>
+              </div>
+            </div>
+      
+            <div class="lot-section">
+              <label>Buy Order Lot</label>
+              <div class="lot-input">
+                <button class="decrease">-</button>
+                <input type="number" value="0">
+                <button class="increase">+</button>
+              </div>
+            </div>
+      
+            <div class="expiry-section">
+              <label>Expiry</label>
+              <select class="expiry-select">
+                <option>Good For Day</option>
+              </select>
+            </div>
+          </div>
+      
+          <div class="popup-footer">
+            <button class="buy-button">Buy</button>
+          </div>
+        </div>
+      </div>   
+
+      <!-- Preview Order Popup -->
+      <div class="preview-popup" id="previewPopup">
+        <div class="preview-content">
+            <h2 class="preview-title">Preview Order</h2>
+            
+            <!-- Icon Container -->
+            <div class="preview-icon">
+                <i class="fas fa-bolt" style="color: #4CAF50;"></i>
+            </div>
+
+            <!-- Order Details -->
+            <div class="order-details">
+                <div class="detail-row">
+                    <span>Stock</span>
+                    <span class="value stock-value">$122,912.50</span>
+                </div>
+                <div class="detail-row">
+                    <span>Expiry</span>
+                    <span class="value expiry-value">Rp. 0</span>
+                </div>
+                <div class="detail-row">
+                    <span>Price</span>
+                    <span class="value price-value">$40,000</span>
+                </div>
+                <div class="detail-row">
+                    <span>Lot</span>
+                    <span class="value lot-value">50</span>
+                </div>
+                <div class="detail-row">
+                    <span>Investment</span>
+                    <span class="value investment-value">$40,000</span>
+                </div>
+                <div class="detail-row total">
+                    <span>Total</span>
+                    <span class="value total-value">$40,000</span>
+                </div>
+            </div>
+
+            <!-- Confirm Button -->
+            <button class="confirm-button">Confirm</button>
+        </div>
+      </div>
+
+        <!-- Popup Sell -->
+        <div class="popup-overlay" id="sellPopup">
+          <div class="popup-content">
+              <h2 class="popup-title">Sell NFLX</h2>
+              
+              <!-- Stock Info Header -->
+              <div class="popup-header">
+                  <div class="stock-info">
+                      <img src="https://images.ctfassets.net/4cd45et68cgf/Rx83JoRDMkYNlMC9MKzcB/2b14d5a59fc3937afd3f03191e19502d/Netflix-Symbol.png?w=700&h=456" alt="NFLX" class="stock-icon">
+                      <div class="stock-details">
+                          <span>NFLX</span>
+                          <span>Netflix, Inc</span>
+                      </div>
+                  </div>
+                  <div class="price-info">
+                      <div class="stock-price">361.42</div>
+                      <div class="price-change positive">+5(0.48%)</div>
+                  </div>
+              </div>
+
+              <div class="popup-body">
+                  <div class="available-lot-section">
+                      <label>Available Lot</label>
+                      <span class="available-lot-value">1</span>
+                  </div>
+                  <div class="lot-section">
+                      <label>Sell Order Lot</label>
+                      <input type="range" class="lot-slider" min="1" max="10" value="1">
+                      <span class="lot-value">1</span>
+                  </div>
+                  <div class="price-section">
+                      <label>Price</label>
+                      <div class="price-input">
+                          <button class="decrease">-</button>
+                          <input type="number" value="0" readonly>
+                          <button class="increase">+</button>
+                      </div>
+                  </div>
+                  <div class="proceeds-section">
+                      <span>Proceeds: <span class="proceeds-value">Rp. 361,500</span></span>
+                  </div>
+                  <div class="profit-loss-section">
+                      <span>Profit/Loss: <span class="profit-loss-value negative">-15.456 (-5.18%)</span></span>
+                  </div>
+                  <div class="expiry-section">
+                      <label>Order Type</label>
+                      <select class="order-type-select">
+                          <option>Good For Day</option>
+                      </select>
+                  </div>
+              </div>
+              <div class="popup-footer">
+                  <button class="btn-sell">Sell</button>
+              </div>
+          </div>
+        </div>
+
+        <!-- Preview Sell Order Popup -->
+        <div class="preview-popup" id="previewSellPopup">
+            <div class="preview-content">
+                <h2 class="preview-title">Preview Sell Order</h2>
+                
+                <!-- Icon Container -->
+                <div class="preview-icon">
+                    <i class="fas fa-bolt" style="color: #4CAF50;"></i>
+                </div>
+
+                <!-- Order Details -->
+                <div class="order-details">
+                    <div class="detail-row">
+                        <span>Stock</span>
+                        <span class="value stock-value">Rp. 361,500</span>
+                    </div>
+                    <div class="detail-row">
+                        <span>Expiry</span>
+                        <span class="value expiry-value">Good For Day</span>
+                    </div>
+                    <div class="detail-row">
+                        <span>Price</span>
+                        <span class="value price-value">361.42</span>
+                    </div>
+                    <div class="detail-row">
+                        <span>Lot</span>
+                        <span class="value lot-value">1</span>
+                    </div>
+                    <div class="detail-row">
+                        <span>Proceed Amount</span>
+                        <span class="value proceed-amount">Rp. 361,500</span>
+                    </div>
+                    <div class="detail-row total">
+                        <span>Total</span>
+                        <span class="value total-value">Rp. 361,500</span>
+                    </div>
+                </div>
+
+                <!-- Confirm Button -->
+                <button class="confirm-button">Confirm</button>
+            </div>
+        </div>
+
+        <!-- Sale Complete Popup -->
+        <div class="popup-overlay" id="saleCompletePopup">
+            <div class="preview-content">
+                <div class="close-button">
+                    <i class="fas fa-times"></i>
+                </div>
+                
+                <!-- Success Icon -->
+                <div class="success-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+
+                <h2 class="complete-title">Sale Complete!</h2>
+                <p class="complete-message">You have successfully sold your stock. Check your updated stock inventory for details.</p>
+
+                <div class="complete-buttons">
+                    <button class="sell-more-button">Sell More Stocks</button>
+                    <button class="view-inventory-button">View Inventory</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Purchase Complete Popup -->
+        <div class="popup-overlay" id="purchaseCompletePopup">
+            <div class="preview-content">
+                <div class="close-button">
+                    <i class="fas fa-times"></i>
+                </div>
+                
+                <!-- Success Icon -->
+                <div class="success-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+
+                <h2 class="complete-title">Purchase Complete!</h2>
+                <p class="complete-message">You have successfully bought the selected stock. Check your stock inventory for details.</p>
+
+                <div class="complete-buttons">
+                    <button class="buy-more-button">Buy More Stocks</button>
+                    <button class="view-inventory-button">View Inventory</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
+    <!-- <script src="../assets/js/Chart.js"></script> -->
+    <script src="../assets/js/popup-buy.js"></script>
+    <script src="../assets/js/popup-review.js"></script>
+    <script src="../assets/js/popup-sell.js"></script>
+
+    <!-- AJAX App Script -->
+    <script>
+      $(document).ready(() => {
+        $('#topbar').load('components/topbar.html');
+        $('#sidebar').load('components/sidebar.html');
+      });
+    </script>
+
+    <!-- Dashboard -->
+    <script defer src="https://unpkg.com/amazon-quicksight-embedding-sdk@1.0.2/dist/quicksight-embedding-js-sdk.min.js"></script>
+    <script>
+      const REST_API_URL = 'https://ljrfhqrvxzwohdw7ligfcbp7um0vitrn.lambda-url.us-east-1.on.aws';
+      const DASHBOARD_ID = '7400d0e1-d506-4c1a-a419-34ed0827c892';
+      let EMBED_URL = '';
+
+      const embedDashboard = (parameters) => {
+        const containerDiv = document.getElementById("embedDashboard");
+        containerDiv.innerHTML = '';
+
+        // default values
+        const {
+          emitten = 'BBRI',
+          period = 'MM',
+          sheet = 'Stocksz',
+        } = parameters || {};
+
+        const options = {
+          url: EMBED_URL,
+          container: containerDiv,
+          initialSheetId: sheet,
+          parameters: {
+            // ChosenEmitten: emitten,
+            EmittenSymbol: 'AMRT',
+            DateAggregateType: period, // DD, WK, MM, Q, YYYY
+          },
+          scrolling: 'no',
+          height: '600px',
+          width: '100%',
+          locale: 'en-US',
+          footerPaddingEnabled: true,
+          styles: {},
+        };
+
+        const quicksightEmbed = QuickSightEmbedding.embedDashboard(options);
+      };
+
+      const spawnDashboard = (parameters = {}) => {
+          fetch(`${REST_API_URL}/api/v1/aws/quicksight/embed-url?dashboardId=${DASHBOARD_ID}`)
+            .then(response => response.json())
+            .then(data => {
+              EMBED_URL = data.data.EmbedUrl;
+              embedDashboard(parameters);
+            })
+            .catch(error => console.error('Error fetching embed URL:', error));
+        };
+
+      document.addEventListener('DOMContentLoaded', () => spawnDashboard());
+    </script>
+  </body>
+</html>

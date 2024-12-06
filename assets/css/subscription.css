@@ -1,0 +1,354 @@
+@import url("../css/style.css");
+.nav-link {
+  text-decoration: none; /* Menghilangkan garis bawah */
+  color: inherit; /* Menggunakan warna yang sama dengan teks lainnya */
+  display: flex; /* Mempertahankan layout flex */
+  align-items: center; /* Mempertahankan alignment */
+  gap: 12px; /* Jarak antara icon dan teks */
+  width: 100%; /* Memastikan link mengambil lebar penuh */
+}
+
+/* Update styling untuk nav-item jika diperlukan */
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.subscription-container {
+  padding: 40px;
+  text-align: center;
+}
+
+.title {
+  color: #1a237e;
+  font-size: 32px;
+  margin-bottom: 16px;
+}
+
+.subtitle {
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto 32px;
+}
+
+.billing-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #7c4dff;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+.pricing-cards {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 32px;
+}
+
+.pricing-card {
+  background: white;
+  border-radius: 16px;
+  padding: 32px;
+  width: 280px;
+  position: relative;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease; /* Menambahkan transisi untuk animasi yang smooth */
+}
+
+/* Animasi hover untuk card biasa */
+.pricing-card:hover {
+  transform: translateY(-10px); /* Card akan naik sedikit */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Bayangan lebih besar */
+  cursor: pointer;
+}
+
+/* Animasi khusus untuk featured card (VVIP) */
+.pricing-card.featured {
+    background: #1a237e;
+    color: white;
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+    position: relative;
+    padding-bottom: 100px; /* Memberikan ruang untuk price dan button */
+}
+
+.pricing-card.featured:hover .save-badge {
+  transform: scale(1.1) rotate(3deg); /* Badge berputar sedikit dan membesar */
+}
+
+/* Animasi untuk badge */
+.save-badge {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: #7c4dff;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  transition: all 0.3s ease;
+}
+
+.features {
+  list-style: none;
+  padding: 0;
+  margin: 24px 0;
+  text-align: left;
+}
+
+.features li {
+  margin: 12px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Animasi untuk check icon */
+.features i {
+  color: #7c4dff;
+  transition: all 0.3s ease;
+}
+
+.pricing-card:hover .features i {
+  transform: scale(1.2); /* Icon check membesar */
+}
+
+.pricing-card:hover .price {
+  transform: scale(1.05); /* Harga membesar sedikit */
+}
+
+.featured .features i {
+  color: white;
+}
+
+/* Animasi untuk harga */
+.price {
+  margin: 24px 0;
+  transition: all 0.3s ease;
+}
+
+/* Animasi untuk harga */
+.amount {
+  transition: all 0.3s ease;
+}
+
+/* Animasi untuk periode */
+.period {
+  transition: all 0.3s ease;
+}
+
+.featured .period {
+  color: #fff;
+}
+
+/* Animasi untuk tombol */
+.choose-btn,
+.subscription-btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.choose-btn {
+  background: transparent;
+  border: 2px solid #7c4dff;
+  color: #7c4dff;
+}
+
+.subscription-btn {
+  background: #7c4dff;
+  color: white;
+}
+
+.choose-btn:hover {
+  background: #7c4dff;
+  color: white;
+  transform: scale(1.05); /* Tombol membesar sedikit */
+}
+
+.subscription-btn:hover {
+  background: #6a3de8;
+  transform: scale(1.05); /* Tombol membesar sedikit */
+}
+
+/* Styling untuk toggle switch */
+.bill-monthly,
+.bill-annually {
+  font-weight: 500;
+  color: #666;
+  transition: all 0.3s ease;
+}
+
+.bill-monthly.active,
+.bill-annually.active {
+  color: #1a237e;
+  font-weight: 600;
+}
+
+/* Animasi untuk slider */
+.switch input:checked + .slider {
+  background-color: #1a237e;
+}
+
+.switch input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+/* Hover effect untuk toggle labels */
+.bill-monthly:hover,
+.bill-annually:hover {
+  color: #1a237e;
+  cursor: pointer;
+}
+
+//nav item
+.nav-item span {
+  color: #8b8b8b;
+  text-decoration: none;
+}
+
+.nav-item i {
+  color: #8b8b8b;
+  width: 20px; /* Lebar tetap untuk icon */
+}
+
+.nav-item a {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+
+.price-button-wrapper {
+    margin-top: auto;
+    position: absolute;
+    bottom: 32px;
+    left: 32px;
+    right: 32px;
+}
+
+
+/* Styling untuk popup */
+.popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background: white;
+    padding: 32px;
+    border-radius: 16px;
+    width: 400px;
+    max-width: 90%;
+}
+
+.popup-content h2 {
+    margin-bottom: 24px;
+    color: #333;
+}
+
+.order-details {
+    margin-bottom: 24px;
+}
+
+.plan-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    font-weight: 500;
+}
+
+.plan-features {
+    color: #666;
+    margin-bottom: 24px;
+    font-size: 14px;
+}
+
+.price-summary {
+    border-top: 1px solid #eee;
+    padding-top: 16px;
+}
+
+.subtotal, .total {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.total {
+    font-weight: 600;
+    font-size: 18px;
+    margin-top: 16px;
+}
+
+.confirm-btn {
+    width: 100%;
+    padding: 12px;
+    background: #1a73e8;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.confirm-btn:hover {
+    background: #1557b0;
+}

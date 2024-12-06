@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research</title>
+    <link rel="stylesheet" href="../assets/css/research.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="container">
+    <!-- Sidebar -->
+    <nav class="sidebar" id="sidebar"></nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <header id="topbar"></header>
+
+        <!-- Search dan Period selector -->
+        <div class="header-section">
+          <div class="search-period-container">
+            <div class="search-container">
+              <i class="fas fa-search search-icon"></i>
+              <input type="text" class="search-input" placeholder="Search">
+            </div>
+        
+            <div class="period-selector">
+              <button class="period-btn" onclick="setActivePeriod(this)">Month</button>
+              <button class="period-btn" onclick="setActivePeriod(this)">Quarter</button>
+              <button class="period-btn" onclick="setActivePeriod(this)">Year</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Categories -->
+        <div class="category-container">
+          <div class="category-item">
+            <div class="category-icon academy-icon">
+              <i class="fas fa-graduation-cap"></i>
+            </div>
+            <span class="category-name">Academy</span>
+          </div>
+          
+          <div class="category-item">
+            <div class="category-icon unboxing-icon">
+              <i class="fas fa-box-open"></i>
+            </div>
+            <span class="category-name">Unboxing</span>
+          </div>
+          
+          <div class="category-item">
+            <div class="category-icon events-icon">
+              <i class="fas fa-broadcast-tower"></i>
+            </div>
+            <span class="category-name">Events</span>
+          </div>
+          
+          <div class="category-item">
+            <div class="category-icon snips-icon">
+              <i class="fas fa-newspaper"></i>
+            </div>
+            <span class="category-name">Snips</span>
+          </div>
+        </div>
+
+        <!-- Articles -->
+        <div class="article-list">
+          <!-- Article 1 -->
+          <div class="article-item">
+            <img src="https://img.okezone.com/content/2018/01/26/481/1850456/mana-lebih-sehat-menulis-dengan-tangan-atau-mengetik-wzHoSO82sQ.jpg" alt="Article" class="article-image">
+            <div class="article-content">
+              <div>
+                <h3 class="article-title">Penn's Expanding Political Climate Gears Up For 2020 Election</h3>
+                <div class="article-meta">
+                  <span>
+                    <i class="fas fa-user"></i>
+                    Craig Bator
+                  </span>
+                  <span>
+                    <i class="fas fa-calendar"></i>
+                    27 Dec 2020
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Article 2 -->
+          <div class="article-item">
+            <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3" alt="Trading Platform" class="article-image">
+            <div class="article-content">
+              <div>
+                <h3 class="article-title">Things To Look For In A Financial Trading Platform</h3>
+                <div class="article-meta">
+                  <span>
+                    <i class="fas fa-user"></i>
+                    Craig Bator
+                  </span>
+                  <span>
+                    <i class="fas fa-calendar"></i>
+                    27 Dec 2020
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Article 3 -->
+          <div class="article-item">
+            <img src="https://images.unsplash.com/photo-1552581234-26160f608093" alt="Hardwork" class="article-image">
+            <div class="article-content">
+              <div>
+                <h3 class="article-title">The Only Thing That Overcomes Hard Luck Is Hardwork</h3>
+                <div class="article-meta">
+                  <span>
+                    <i class="fas fa-user"></i>
+                    Craig Bator
+                  </span>
+                  <span>
+                    <i class="fas fa-calendar"></i>
+                    27 Dec 2020
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Article 4 -->
+          <div class="article-item">
+            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40" alt="Success" class="article-image">
+            <div class="article-content">
+              <div>
+                <h3 class="article-title">Success Is Not A Good Teacher Failure Makes You Humble</h3>
+                <div class="article-meta">
+                  <span>
+                    <i class="fas fa-user"></i>
+                    Craig Bator
+                  </span>
+                  <span>
+                    <i class="fas fa-calendar"></i>
+                    27 Dec 2020
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Article 5 -->
+          <div class="article-item">
+            <img src="https://images.unsplash.com/photo-1635321593217-40050ad13c74" alt="Hotel Breakfast" class="article-image">
+            <div class="article-content">
+              <div>
+                <h3 class="article-title">At Value-Focused Hotels, The Free Breakfast Gets Bigger</h3>
+                <div class="article-meta">
+                  <span>
+                    <i class="fas fa-user"></i>
+                    Craig Bator
+                  </span>
+                  <span>
+                    <i class="fas fa-calendar"></i>
+                    27 Dec 2020
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    
+    <script src="../assets/js/menu-click.js"></script>
+    <script src="../assets/js/research.js"></script>
+    <script>
+      $(document).ready(() => {
+        $('#topbar').load('../components/topbar.html');
+        $('#sidebar').load('../components/sidebar.html');
+      });
+    </script>
+</body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../assets/css/ipo.css" />
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <script src="../assets/js/ipo.js"></script>
+    <title>IPO d</title>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Sidebar -->
+      <nav class="sidebar" id="sidebar"></nav>
+
+      <!-- Main Content -->
+      <main class="main-content">
+        <header id="topbar"></header>
+
+        <div class="ipo-container">
+          <h1>Let's Join N.E.X.U.S</h1>
+          <p class="subtitle">Start your corporation journey with us</p>
+
+          <!-- First Form Section -->
+          <div class="registration-form" id="ipo-registration">
+            <h2>IPO Registration</h2>
+
+            <div class="form-group">
+              <label>xxx</label>
+              <input type="text" placeholder="xxxxx" />
+            </div>
+
+            <div class="form-group">
+              <label>xxx</label>
+              <input type="text" placeholder="xxxx" />
+            </div>
+
+            <div class="form-group">
+              <label>xxx</label>
+              <input type="text" placeholder="xxxxx" />
+            </div>
+
+            <div class="form-group">
+              <label>xxx</label>
+              <input type="text" placeholder="xxxxx" />
+            </div>
+
+            <div class="form-group">
+              <label>xxx</label>
+              <input type="text" placeholder="xxx" />
+            </div>
+
+            <div class="button-group">
+              <button class="next-btn" onclick="showNextForm()">NEXT</button>
+            </div>
+          </div>
+
+          <!-- Second Form Section -->
+          <div
+            class="registration-form"
+            id="company-legislation"
+            style="display: none"
+          >
+            <h2>Company Legislation</h2>
+
+            <div class="form-group">
+              <label>xxx</label>
+              <input type="text" placeholder="xxxxx" />
+            </div>
+
+            <div class="form-group">
+              <label>xxx</label>
+              <input type="text" placeholder="xxxx" />
+            </div>
+
+            <div class="form-group">
+              <label>xxx</label>
+              <input type="text" placeholder="xxxxx" />
+            </div>
+
+            <div class="form-group">
+              <label>xxx</label>
+              <input type="text" placeholder="xxxxx" />
+            </div>
+
+            <div class="form-group">
+              <label>xxx</label>
+              <input type="text" placeholder="xxx" />
+            </div>
+
+            <div class="button-group">
+              <button class="back-btn" onclick="goBack()">BACK</button>
+              <button class="next-btn" onclick="submitForm()">REGISTER</button>
+            </div>
+          </div>
+
+          <!-- Add this new welcome screen div -->
+          <div class="welcome-screen" id="welcome-screen" style="display: none">
+            <h1>Welcome Your Sector Business</h1>
+            <p class="subtitle">let's start and develop your business sector</p>
+            <button class="start-btn">Start</button>
+          </div>
+
+          <!-- Update the register process div -->
+          <div
+            class="registration-form"
+            id="register-process"
+            style="display: none"
+          >
+            <h2>Register Process</h2>
+            <p class="subtitle">
+              Data is being processed to the Databases Server
+            </p>
+
+            <div class="process-steps">
+              <div class="step">
+                <div class="step-number">
+                  <i class="fas fa-check"></i>
+                  <span>1</span>
+                </div>
+                <div class="step-content">
+                  <h3>In Progress</h3>
+                  <p>
+                    Data is sent to the database server, then waits for the
+                    process.....
+                  </p>
+                </div>
+              </div>
+
+              <div class="step">
+                <div class="step-number">
+                  <i class="fas fa-check"></i>
+                  <span>2</span>
+                </div>
+                <div class="step-content">
+                  <h3>Waiting</h3>
+                  <p>Data awaiting approval from.....</p>
+                </div>
+              </div>
+
+              <div class="step">
+                <div class="step-number">
+                  <i class="fas fa-check"></i>
+                  <span>3</span>
+                </div>
+                <div class="step-content">
+                  <h3>Finished</h3>
+                  <p>Congrats, the process is complete</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script src="../assets/js/menu-click.js"></script>
+    <script>
+      $(document).ready(() => {
+        $("#topbar").load("../components/topbar.html");
+        $("#sidebar").load("../components/sidebar.html");
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/chatbot.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <title>Chatbot</title>
+</head>
+<body>
+  <div class="container">
+    <!-- Sidebar -->
+    <nav class="sidebar" id="sidebar"></nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <header id="topbar"></header>
+
+      <h1 class="chatbot-title">Chatbot</h1>
+
+      <!-- Chat Container -->
+        <div class="chat-container">
+          <!-- Chat Messages -->
+          <div class="chat-messages">
+            <!-- Bot Message -->
+            <div class="message bot">
+              <img src="../assets/img/goku.png" alt="Bot" class="message-avatar">
+              <div class="message-content">
+                <p>Halo! Saya adalah AI Assistant yang siap membantu Anda dengan pertanyaan seputar investasi dan trading.</p>
+              </div>
+            </div>
+
+            <!-- User Message -->
+            <div class="message user">
+              <img src="../assets/img/goku.png" alt="User" class="message-avatar">
+              <div class="message-content">
+                <p>Hai, saya ingin bertanya tentang investasi saham</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Chat Input -->
+          <div class="chat-input">
+            <div class="input-container">
+              <input type="text" class="message-input" placeholder="Mulai kirim pesan">
+              <button class="mic-button">
+                <i class="fas fa-microphone"></i>
+              </button>
+              <button class="send-button">
+                <i class="fas fa-paper-plane"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="../assets/js/menu-click.js"></script>
+    <script>
+      $(document).ready(() => {
+        $("#topbar").load("../components/topbar.html");
+        $("#sidebar").load("../components/sidebar.html");
+      });
+    </script>
+  </body>
+</body>
+</html>

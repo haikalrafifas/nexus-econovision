@@ -1,0 +1,113 @@
+@import url('../css/style.css');
+@import url('../css/nav.css');
+
+.portfolio-container {
+    padding: 24px;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #1a237e;
+    margin-bottom: 24px;
+}
+
+/* Styling untuk tabel */
+.stock-table {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead {
+    background-color: #f8f9fa;
+}
+
+th {
+    padding: 16px;
+    text-align: left;
+    color: #666;
+    font-weight: 500;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+}
+
+th i {
+    margin-left: 4px;
+    font-size: 12px;
+}
+
+td {
+    padding: 16px;
+    border-bottom: 1px solid #eee;
+}
+
+/* Styling untuk tombol aksi */
+.btn {
+    padding: 6px 16px;
+    border-radius: 4px;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.btn-sell {
+    background: #FF9800;
+    color: white;
+}
+
+.btn-buy {
+    background: #1a237e;
+    color: white;
+}
+
+.btn:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+/* Hover effect untuk baris tabel */
+tbody tr:hover {
+    background-color: #f8f9fa;
+}
+
+/* Styling untuk sort icon */
+th:hover i {
+    color: #1a237e;
+}
+
+/* Responsive table */
+@media screen and (max-width: 768px) {
+    .stock-table {
+        overflow-x: auto;
+    }
+    
+    table {
+        min-width: 800px;
+    }
+}
+
+/* Styling untuk status badges */
+.status {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.status-buy {
+    background: rgba(25, 118, 210, 0.1);
+    color: #1976D2;
+}
+
+.status-sell {
+    background: rgba(255, 152, 0, 0.1);
+    color: #FF9800;
+}

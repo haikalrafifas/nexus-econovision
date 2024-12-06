@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../assets/css/news.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <title>News</title>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Sidebar -->
+      <nav class="sidebar" id="sidebar"></nav>
+
+      <!-- Main Content -->
+      <main class="main-content">
+        <header id="topbar"></header>
+
+        <!-- Search and Period Selector Container -->
+        <div class="search-section">
+          <div class="search-container">
+            <i class="fas fa-search search-icon"></i>
+            <input type="text" placeholder="Search" class="search-input" />
+          </div>
+
+          <div class="period-selector">
+            <button class="period-btn">Month</button>
+            <button class="period-btn active">Quarter</button>
+            <button class="period-btn">Year</button>
+          </div>
+        </div>
+
+        <!-- Latest News Section -->
+        <section class="latest-news">
+          <div class="section-header">
+            <h2>Latest news</h2>
+            <a href="#" class="view-all">View all</a>
+          </div>
+
+          <div class="news-cards">
+            <!-- News Card 1 -->
+            <div class="news-card">
+              <img
+                src="https://assets.bwbx.io/images/users/iqjWHBFdfxIU/i6S2TmE.o7oY/v0/1400x1050.webp"
+                alt="Meta News"
+              />
+              <div class="news-content">
+                <h3>
+                  Facebook's 'Failed' Libra Cryptocurrency Is No Closer to
+                  Release
+                </h3>
+                <div class="news-meta">
+                  <span class="source">Bloomberg</span>
+                  <span class="time">35m ago</span>
+                </div>
+                <div class="stock-info">
+                  <span class="stock-name">META</span>
+                  <span class="stock-change positive">+0.26%</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- News Card 2 -->
+            <div class="news-card">
+              <img
+                src="https://ei.marketwatch.com/Multimedia/2019/11/24/Photos/ZH/MW-HV863_cybert_20191124171956_ZH.jpg?uuid=8bce7cbc-0f08-11ea-8c13-9c8e992d421e"
+                alt="Tesla News"
+              />
+              <div class="news-content">
+                <h3>
+                  The best bullish case ever made for Tesla, according to
+                  prominent Tesla bear
+                </h3>
+                <div class="news-meta">
+                  <span class="source">The AtlasScoop</span>
+                  <span class="time">35m ago</span>
+                </div>
+                <div class="stock-info">
+                  <span class="stock-name">TSLA</span>
+                  <span class="stock-change negative">-0.34%</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- News Card 3 -->
+            <div class="news-card">
+              <img
+                src="https://ei.marketwatch.com/Multimedia/2020/01/21/Photos/ZH/MW-HY717_AppleW_20200121115949_ZH.jpg?uuid=6fa134dc-3c6f-11ea-9423-9c8e992d421e"
+                alt="Apple News"
+              />
+              <div class="news-content">
+                <h3>
+                  Apple has soared out of the value realm, but you may still be
+                  able to find success on this stock list
+                </h3>
+                <div class="news-meta">
+                  <span class="source">WSJ</span>
+                  <span class="time">5h ago</span>
+                </div>
+                <div class="stock-info">
+                  <span class="stock-name">AAPL</span>
+                  <span class="stock-change positive">+0.51%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- News Section -->
+        <section class="news-section">
+          <div class="section-header">
+            <h2>News</h2>
+            <a href="#" class="view-more">View More</a>
+          </div>
+
+          <div class="news-grid">
+            <article class="news-article">
+              <img
+                src="https://www.reuters.com/resizer/v2/https%3A%2F%2Fcloudfront-us-east-2.images.arcpublishing.com%2Freuters%2FMPQGRIWX75I6DB2K65XTIDRTM4.jpg?auth=91875664eb311c804816b80a9c1a27ae4190fb2d787a8a86136a99c3e0077037&width=720&quality=80"
+                alt="Elon Musk"
+              />
+              <div class="article-content">
+                <h3>
+                  Elon Musk exercises options, sells another $930 million in
+                  Tesla stock
+                </h3>
+                <div class="article-meta">
+                  <div class="author">
+                    <img
+                      src="https://upload.wikimedia.org/wikipedia/commons/9/97/Michael_Murphy_%2827363063683%29_%281%29.jpg"
+                      alt="Mike Murphy"
+                    />
+                    <span>Mike Murphy</span>
+                  </div>
+                  <span class="date">15 November 2021</span>
+                </div>
+                <p>
+                  Elon Musk continues to unload Tesla Inc. stock, exercising his
+                  options and selling another $930 million in shares Monday
+                  after dumping $6.9 billion in stock last week. According to
+                  filings Monday with the Securities and Exchange Commission,
+                  Musk sold more than 934,000 shares Monday at prices ranging
+                  from $6.25 to $1,028 a share.
+                </p>
+                <button class="read-news">Read News</button>
+              </div>
+            </article>
+
+            <article class="news-article">
+              <img
+                src="https://cdn.pixabay.com/photo/2024/04/17/15/10/family-8702291_1280.png"
+                alt="Family Investment"
+              />
+              <div class="article-content">
+                <h3>
+                  4 stock picks for the post-pandemic 'nesting' economy from a
+                  five-star money manager
+                </h3>
+                <div class="article-meta">
+                  <div class="author">
+                    <img
+                      src="https://pbs.twimg.com/profile_images/2185396684/PVD3_400x400.png"
+                      alt="Philip van Doorn"
+                    />
+                    <span>Philip van Doorn</span>
+                  </div>
+                  <span class="date">16 November 2021</span>
+                </div>
+                <p>
+                  The pandemic has driven changes in behavior that are important
+                  to investors, as they underline growth opportunities that are
+                  likely to extend for many years, according to Alex Ely of
+                  Macquarie Asset Management.
+                </p>
+                <button class="read-news">Read News</button>
+              </div>
+            </article>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="../assets/js/menu-click.js"></script>
+    <script src="../assets/js/news.js"></script>
+    <script>
+      $(document).ready(() => {
+        $("#topbar").load("../components/topbar.html");
+        $("#sidebar").load("../components/sidebar.html");
+      });
+    </script>
+  </body>
+</html>

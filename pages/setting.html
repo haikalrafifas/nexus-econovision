@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/setting.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <title>Settings</title>
+</head>
+<body>
+  <div class="container">
+    <!-- Sidebar -->
+    <nav class="sidebar" id="sidebar"></nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <header id="topbar"></header>
+        
+            <div class="setting-container">
+                <div class="user-info">
+                    <h1 class="user-name">Mbok Surti</h1>
+                    <p class="user-id">ID User</p>
+                </div>
+        
+            <!-- Update bagian setting items -->
+            <div class="settings-card">
+                <div class="setting-section">
+                    <!-- Account -->
+                    <div class="setting-item" data-section="account">
+                        <div class="setting-icon">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="setting-content">
+                            <h3>Account</h3>
+                            <div class="setting-details hidden">
+                                <p>Username : Mbok Surti</p>
+                                <p>ID User : 12345</p>
+                            </div>
+                        </div>
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+
+                    <!-- Privasi -->
+                    <div class="setting-item" data-section="privacy">
+                        <div class="setting-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="setting-content">
+                            <h3>Privasi</h3>
+                            <div class="setting-details hidden">
+                                <p>Password: ****</p>
+                                <button class="change-password-btn">Change Password</button>
+                            </div>
+                        </div>
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+
+                    <!-- About -->
+                    <div class="setting-item" data-section="about">
+                        <div class="setting-icon">
+                            <i class="fas fa-info-circle"></i>
+                        </div>
+                        <div class="setting-content">
+                            <h3>About</h3>
+                            <div class="setting-details hidden">
+                                <p>PROFIT</p>
+                                <p>Predictive Research for Optimizing Future Investment Trends</p>
+                            </div>
+                        </div>
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../assets/js/menu-click.js"></script>
+    <script src="../assets/js/setting.js"></script>
+    <script>
+      $(document).ready(() => {
+        $('#topbar').load('../components/topbar.html');
+        $('#sidebar').load('../components/sidebar.html');
+      });
+    </script>
+</body>
+</html>
